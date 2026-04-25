@@ -99,7 +99,7 @@ function ServiceCard({
         ref={ref}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="group relative h-full p-8 rounded-2xl glass border border-gold-500/10 hover:border-gold-500/30 transition-colors duration-500 cursor-pointer overflow-hidden"
+        className="group relative h-full p-6 sm:p-8 rounded-2xl glass border border-gold-500/10 hover:border-gold-500/30 transition-colors duration-500 cursor-pointer overflow-hidden"
         style={{
           transformStyle: "preserve-3d",
           transition: "transform 0.3s ease-out, border-color 0.5s",
@@ -122,19 +122,19 @@ function ServiceCard({
         />
 
         <div className="relative z-10" style={{ transform: "translateZ(40px)" }}>
-          <div className="flex items-start justify-between mb-6">
-            <div className="w-14 h-14 rounded-xl bg-gold-gradient flex items-center justify-center glow-gold group-hover:scale-110 transition-transform duration-500">
-              <Icon size={24} className="text-neutral-900" />
+          <div className="flex items-start justify-between mb-4 sm:mb-6 gap-3">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gold-gradient flex items-center justify-center glow-gold group-hover:scale-110 transition-transform duration-500 shrink-0">
+              <Icon size={22} className="text-neutral-900" />
             </div>
-            <span className="text-xs px-3 py-1 rounded-full bg-gold-500/10 text-gold-300 border border-gold-500/20">
+            <span className="text-[10px] sm:text-xs px-2.5 sm:px-3 py-1 rounded-full bg-gold-500/10 text-gold-300 border border-gold-500/20 whitespace-nowrap">
               {service.tag}
             </span>
           </div>
 
-          <h3 className="font-display text-2xl font-bold mb-3">
+          <h3 className="font-display text-xl sm:text-2xl font-bold mb-2 sm:mb-3">
             {service.title}
           </h3>
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
             {service.desc}
           </p>
 
@@ -154,7 +154,7 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative py-32 lg:py-40 noise-bg overflow-hidden"
+      className="relative py-20 sm:py-28 lg:py-40 noise-bg overflow-hidden"
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(251,183,36,0.05),transparent_60%)]" />
 
@@ -164,22 +164,22 @@ export function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl mb-16"
+          className="max-w-3xl mb-12 sm:mb-16"
         >
-          <div className="text-sm text-gold-400 font-semibold tracking-widest uppercase mb-4">
+          <div className="text-xs sm:text-sm text-gold-400 font-semibold tracking-widest uppercase mb-3 sm:mb-4">
             Meine Leistungen
           </div>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance">
             Maßgeschneiderte{" "}
             <span className="text-gold-gradient">Investmentpläne</span>
           </h2>
-          <p className="text-lg text-muted-foreground mt-6 leading-relaxed">
+          <p className="text-base sm:text-lg text-muted-foreground mt-4 sm:mt-6 leading-relaxed">
             Kein Copy-Paste. Jeder Plan ist so einzigartig wie du – abgestimmt
             auf deine Lebenssituation, Ziele und deinen Zeithorizont.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((s, i) => (
             <ServiceCard key={s.title} service={s} index={i} />
           ))}

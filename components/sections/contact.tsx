@@ -29,7 +29,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative py-32 lg:py-40 overflow-hidden noise-bg"
+      className="relative py-20 sm:py-28 lg:py-40 overflow-hidden noise-bg"
     >
       {/* 3D Background */}
       <div className="absolute inset-0 opacity-30 pointer-events-none">
@@ -38,23 +38,23 @@ export function ContactSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(251,183,36,0.08),transparent_70%)]" />
 
-      <div className="container mx-auto relative z-10 grid lg:grid-cols-2 gap-16">
+      <div className="container mx-auto relative z-10 grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="space-y-8"
+          className="space-y-6 sm:space-y-8"
         >
           <div>
-            <div className="text-sm text-gold-400 font-semibold tracking-widest uppercase mb-4">
+            <div className="text-xs sm:text-sm text-gold-400 font-semibold tracking-widest uppercase mb-3 sm:mb-4">
               Kontakt
             </div>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance">
               Lass uns{" "}
               <span className="text-gold-gradient">reden.</span>
             </h2>
-            <p className="text-lg text-muted-foreground mt-6 leading-relaxed max-w-lg">
+            <p className="text-base sm:text-lg text-muted-foreground mt-4 sm:mt-6 leading-relaxed max-w-lg">
               Das erste Gespräch ist kostenlos und unverbindlich. Schreib mir
               oder buch direkt einen Termin – ich freue mich auf dich.
             </p>
@@ -109,7 +109,7 @@ export function ContactSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="glass p-8 md:p-10 rounded-3xl border border-gold-500/10 space-y-5"
+          className="glass p-6 sm:p-8 md:p-10 rounded-3xl border border-gold-500/10 space-y-4 sm:space-y-5"
         >
           <div>
             <label className="text-sm font-medium text-muted-foreground mb-2 block">

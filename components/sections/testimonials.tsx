@@ -48,8 +48,8 @@ function TestimonialCard({
   t: (typeof testimonials)[number];
 }) {
   return (
-    <div className="flex-shrink-0 w-[360px] md:w-[420px] p-8 rounded-2xl glass border border-gold-500/10 hover:border-gold-500/30 transition-colors">
-      <Quote className="text-gold-400/30 mb-4" size={32} />
+    <div className="flex-shrink-0 w-[280px] sm:w-[360px] md:w-[420px] p-6 sm:p-8 rounded-2xl glass border border-gold-500/10 hover:border-gold-500/30 transition-colors">
+      <Quote className="text-gold-400/30 mb-3 sm:mb-4" size={28} />
       <div className="flex gap-0.5 mb-4">
         {Array.from({ length: t.rating }).map((_, i) => (
           <Star
@@ -79,11 +79,11 @@ export function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="relative py-32 lg:py-40 overflow-hidden noise-bg"
+      className="relative py-20 sm:py-28 lg:py-40 overflow-hidden noise-bg"
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(251,183,36,0.05),transparent_60%)]" />
 
-      <div className="container mx-auto relative z-10 mb-16">
+      <div className="container mx-auto relative z-10 mb-10 sm:mb-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -91,10 +91,10 @@ export function TestimonialsSection() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl"
         >
-          <div className="text-sm text-gold-400 font-semibold tracking-widest uppercase mb-4">
+          <div className="text-xs sm:text-sm text-gold-400 font-semibold tracking-widest uppercase mb-3 sm:mb-4">
             Stimmen
           </div>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance">
             Was junge{" "}
             <span className="text-gold-gradient">Investoren</span> sagen
           </h2>
@@ -103,10 +103,10 @@ export function TestimonialsSection() {
 
       {/* Infinite marquee */}
       <div className="relative">
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r from-background to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-background to-transparent" />
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-32 z-10 bg-gradient-to-r from-background to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-32 z-10 bg-gradient-to-l from-background to-transparent" />
 
-        <div className="flex gap-6 marquee-track">
+        <div className="flex gap-4 sm:gap-6 marquee-track">
           {[...testimonials, ...testimonials].map((t, i) => (
             <TestimonialCard key={i} t={t} />
           ))}

@@ -59,11 +59,11 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-gold-500/10 py-16 mt-20 noise-bg">
+    <footer className="relative border-t border-gold-500/10 py-12 sm:py-16 mt-16 sm:mt-20 noise-bg">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(251,183,36,0.04),transparent_60%)] pointer-events-none" />
 
-      <div className="container mx-auto relative z-10 grid md:grid-cols-4 gap-12">
-        <div className="md:col-span-2">
+      <div className="container mx-auto relative z-10 grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12">
+        <div className="col-span-2 md:col-span-2">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-10 rounded-full bg-gold-gradient flex items-center justify-center font-display font-bold text-neutral-900 glow-gold">
               JD
@@ -138,11 +138,11 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="container mx-auto mt-12 pt-8 border-t border-gold-500/10 flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
-        <p className="text-xs text-muted-foreground">
+      <div className="container mx-auto mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gold-500/10 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 relative z-10 text-center md:text-left">
+        <p className="text-[11px] sm:text-xs text-muted-foreground">
           © {year} Joel Dziobek · Alle Rechte vorbehalten
         </p>
-        <p className="text-xs text-muted-foreground">
+        <p className="text-[11px] sm:text-xs text-muted-foreground">
           Designed & built with{" "}
           <span className="text-gold-400">♦</span> in Magdeburg
         </p>

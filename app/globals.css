@@ -33,15 +33,30 @@
   }
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
   }
   ::selection {
     background: #fbb724;
     color: #1a1a1a;
+  }
+  /* Prevent iOS auto-zoom on form fields (>=16px font-size) */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+  @media (min-width: 640px) {
+    input,
+    select,
+    textarea {
+      font-size: 14px;
+    }
   }
 }
 
