@@ -97,7 +97,7 @@ export function ContactSection() {
               </div>
               <div>
                 <div className="text-xs text-muted-foreground">Standort</div>
-                <div className="font-medium">Magdeburg, Sachsen-Anhalt</div>
+                <div className="font-medium">Schleinufer 11, 39104 Magdeburg</div>
               </div>
             </div>
           </div>
@@ -138,12 +138,11 @@ export function ContactSection() {
               Ich interessiere mich für
             </label>
             <select className="w-full px-4 py-3 rounded-xl bg-background/60 border border-gold-500/10 focus:border-gold-500/50 focus:outline-none focus:ring-2 focus:ring-gold-500/20 transition-all">
-              <option>ETF-Starterplan</option>
               <option>Vermögensaufbau</option>
               <option>Altersvorsorge</option>
-              <option>Portfolio-Check</option>
-              <option>Finanz-Coaching</option>
-              <option>Ich weiß es noch nicht</option>
+              <option>Sachabsicherung</option>
+              <option>Finanzgutachten</option>
+              <option>Bin mir noch nicht sicher</option>
             </select>
           </div>
           <div>

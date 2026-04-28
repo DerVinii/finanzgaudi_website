@@ -7,7 +7,7 @@ import { CheckCircle2, MapPin, User } from "lucide-react";
 const highlights = [
   "Zertifizierter Finanzberater mit Fokus auf Next-Gen-Investoren",
   "Spezialisiert auf ETF-Sparpläne, Altersvorsorge & Vermögensaufbau",
-  "Transparente Honorarberatung – keine Produktprovisionen",
+  "Transparente Kosten, die im Erstgespräch aufgeklärt werden",
   "Sprechstunden online oder persönlich in Magdeburg",
 ];
 

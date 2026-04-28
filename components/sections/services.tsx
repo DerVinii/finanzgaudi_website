@@ -16,7 +16,7 @@ const services = [
   {
     icon: Rocket,
     title: "ETF-Starterplan",
-    desc: "Dein Einstieg ins Investieren. Für junge Leute, die ab 25 €/Monat durchstarten wollen.",
+    desc: "Dein Einstieg ins Investieren. Für junge Leute, die ab 50 €/Monat durchstarten wollen.",
     tag: "Für Anfänger",
     accent: "from-gold-400/20 to-gold-600/5",
   },
@@ -51,7 +51,7 @@ const services = [
   {
     icon: Sparkles,
     title: "Finanz-Coaching",
-    desc: "1:1 Sessions – wir besprechen alles von Budgeting bis Krypto auf Augenhöhe.",
+    desc: "Erstellung eines individuellen Finanzgutachtens – maßgeschneidert auf deine Lebenssituation und Ziele.",
     tag: "Individuell",
     accent: "from-gold-300/20 to-gold-700/5",
   },
