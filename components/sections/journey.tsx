@@ -10,30 +10,30 @@ const steps = [
   {
     icon: Coins,
     year: "Heute",
-    euro: "25 €",
+    euro: "50 €",
     title: "Dein erster Euro",
-    text: "Alles beginnt klein. 25 €/Monat – weniger als dein Streaming-Abo. Aber der Zinseszins beginnt zu arbeiten.",
+    text: "Alles beginnt klein. 50 €/Monat – weniger als dein Streaming-Abo plus ein Restaurantbesuch. Aber der Zinseszins beginnt zu arbeiten.",
   },
   {
     icon: Sprout,
     year: "Nach 5 Jahren",
-    euro: "1.900 €",
+    euro: "3.800 €",
     title: "Dein Fundament",
     text: "Du hast dein erstes echtes Polster. Die Angst vor finanziellen Engpässen weicht Gelassenheit.",
   },
   {
     icon: TreePine,
     year: "Nach 15 Jahren",
-    euro: "9.200 €",
+    euro: "18.400 €",
     title: "Dein Baum wächst",
     text: "Dein Vermögen arbeitet härter als du selbst. Dividenden und Kurssteigerungen summieren sich spürbar.",
   },
   {
     icon: Trophy,
     year: "Nach 30 Jahren",
-    euro: "37.800 €",
+    euro: "75.600 €",
     title: "Finanzielle Freiheit",
-    text: "Was du eingezahlt hast: 9.000 €. Was dein Geld gearbeitet hat: ~28.800 €. So funktioniert Zinseszins.",
+    text: "Was du eingezahlt hast: 18.000 €. Was dein Geld gearbeitet hat: ~57.600 €. So funktioniert Zinseszins.",
   },
 ];
 
