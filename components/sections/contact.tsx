@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { FormEvent, useState } from "react";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Send } from "lucide-react";
 
 const ContactBg = dynamic(
   () =>
@@ -75,47 +75,6 @@ export function ContactSection() {
             </p>
           </div>
 
-          <div className="space-y-5">
-            <a
-              href="mailto:joeldziobek68@gmail.com"
-              className="flex items-center gap-4 group"
-            >
-              <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center group-hover:bg-gold-500/20 transition-colors">
-                <Mail size={20} className="text-gold-400" />
-              </div>
-              <div>
-                <div className="text-xs text-muted-foreground">E-Mail</div>
-                <div className="font-medium group-hover:text-gold-400 transition-colors">
-                  joeldziobek68@gmail.com
-                </div>
-              </div>
-            </a>
-
-            <a
-              href="tel:+491735932325"
-              className="flex items-center gap-4 group"
-            >
-              <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center group-hover:bg-gold-500/20 transition-colors">
-                <Phone size={20} className="text-gold-400" />
-              </div>
-              <div>
-                <div className="text-xs text-muted-foreground">Telefon</div>
-                <div className="font-medium group-hover:text-gold-400 transition-colors">
-                  +49 173 5932325
-                </div>
-              </div>
-            </a>
-
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center">
-                <MapPin size={20} className="text-gold-400" />
-              </div>
-              <div>
-                <div className="text-xs text-muted-foreground">Standort</div>
-                <div className="font-medium">Schleinufer 11, 39104 Magdeburg</div>
-              </div>
-            </div>
-          </div>
         </motion.div>
 
         <motion.form

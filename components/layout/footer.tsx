@@ -123,7 +123,7 @@ export function Footer() {
           <div className="font-semibold mb-4">Rechtliches</div>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>
-              <Link href="#" className="hover:text-gold-400 transition-colors">Impressum</Link>
+              <Link href="/impressum" className="hover:text-gold-400 transition-colors">Impressum</Link>
             </li>
             <li>
               <Link href="#" className="hover:text-gold-400 transition-colors">Datenschutz</Link>
