@@ -126,13 +126,10 @@ export function Footer() {
               <Link href="/impressum" className="hover:text-gold-400 transition-colors">Impressum</Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-gold-400 transition-colors">Datenschutz</Link>
+              <Link href="/datenschutz" className="hover:text-gold-400 transition-colors">Datenschutz</Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-gold-400 transition-colors">AGB</Link>
-            </li>
-            <li>
-              <Link href="#" className="hover:text-gold-400 transition-colors">Cookies</Link>
+              <Link href="/cookies" className="hover:text-gold-400 transition-colors">Cookies</Link>
             </li>
           </ul>
         </div>
