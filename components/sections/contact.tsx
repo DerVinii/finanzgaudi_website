@@ -17,13 +17,28 @@ export function ContactSection() {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+    const data = new FormData(e.currentTarget);
+    try {
+      await fetch(
+        "https://n8n-self-host-ito3.onrender.com/webhook/7bdb8453-b82a-4257-8d8b-db2febf473c9",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: data.get("name"),
+            email: data.get("email"),
+            interest: data.get("interest"),
+            message: data.get("message"),
+          }),
+        }
+      );
+    } finally {
       setLoading(false);
       setSent(true);
-    }, 1200);
+    }
   };
 
   return (
@@ -62,7 +77,7 @@ export function ContactSection() {
 
           <div className="space-y-5">
             <a
-              href="mailto:kontakt@joel-dziobek.de"
+              href="mailto:joeldziobek68@gmail.com"
               className="flex items-center gap-4 group"
             >
               <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center group-hover:bg-gold-500/20 transition-colors">
@@ -71,13 +86,13 @@ export function ContactSection() {
               <div>
                 <div className="text-xs text-muted-foreground">E-Mail</div>
                 <div className="font-medium group-hover:text-gold-400 transition-colors">
-                  kontakt@joel-dziobek.de
+                  joeldziobek68@gmail.com
                 </div>
               </div>
             </a>
 
             <a
-              href="tel:+49391000000"
+              href="tel:+491735932325"
               className="flex items-center gap-4 group"
             >
               <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center group-hover:bg-gold-500/20 transition-colors">
@@ -86,7 +101,7 @@ export function ContactSection() {
               <div>
                 <div className="text-xs text-muted-foreground">Telefon</div>
                 <div className="font-medium group-hover:text-gold-400 transition-colors">
-                  +49 391 · auf Anfrage
+                  +49 173 5932325
                 </div>
               </div>
             </a>
@@ -117,6 +132,7 @@ export function ContactSection() {
             </label>
             <input
               required
+              name="name"
               type="text"
               placeholder="Max Mustermann"
               className="w-full px-4 py-3 rounded-xl bg-background/60 border border-gold-500/10 focus:border-gold-500/50 focus:outline-none focus:ring-2 focus:ring-gold-500/20 transition-all"
@@ -128,6 +144,7 @@ export function ContactSection() {
             </label>
             <input
               required
+              name="email"
               type="email"
               placeholder="max@beispiel.de"
               className="w-full px-4 py-3 rounded-xl bg-background/60 border border-gold-500/10 focus:border-gold-500/50 focus:outline-none focus:ring-2 focus:ring-gold-500/20 transition-all"
@@ -137,7 +154,7 @@ export function ContactSection() {
             <label className="text-sm font-medium text-muted-foreground mb-2 block">
               Ich interessiere mich für
             </label>
-            <select className="w-full px-4 py-3 rounded-xl bg-background/60 border border-gold-500/10 focus:border-gold-500/50 focus:outline-none focus:ring-2 focus:ring-gold-500/20 transition-all">
+            <select name="interest" className="w-full px-4 py-3 rounded-xl bg-background/60 border border-gold-500/10 focus:border-gold-500/50 focus:outline-none focus:ring-2 focus:ring-gold-500/20 transition-all">
               <option>Vermögensaufbau</option>
               <option>Altersvorsorge</option>
               <option>Sachabsicherung</option>
@@ -150,6 +167,7 @@ export function ContactSection() {
               Deine Nachricht
             </label>
             <textarea
+              name="message"
               rows={4}
               placeholder="Erzähl mir kurz, wo du stehst und was du erreichen willst…"
               className="w-full px-4 py-3 rounded-xl bg-background/60 border border-gold-500/10 focus:border-gold-500/50 focus:outline-none focus:ring-2 focus:ring-gold-500/20 transition-all resize-none"
