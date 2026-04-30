@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const InstagramIcon = ({ size = 16 }: { size?: number }) => (
   <svg
@@ -57,6 +58,9 @@ const YoutubeIcon = ({ size = 16 }: { size?: number }) => (
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const pathname = usePathname();
+  const hrefFor = (hash: string) =>
+    pathname === "/" ? hash : `/${hash}`;
 
   return (
     <footer className="relative border-t border-gold-500/10 py-12 sm:py-16 mt-16 sm:mt-20 noise-bg">
@@ -102,19 +106,19 @@ export function Footer() {
           <div className="font-semibold mb-4">Navigation</div>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>
-              <Link href="#about" className="hover:text-gold-400 transition-colors">Über Joel</Link>
+              <Link href={hrefFor("#about")} className="hover:text-gold-400 transition-colors">Über Joel</Link>
             </li>
             <li>
-              <Link href="#services" className="hover:text-gold-400 transition-colors">Leistungen</Link>
+              <Link href={hrefFor("#services")} className="hover:text-gold-400 transition-colors">Leistungen</Link>
             </li>
             <li>
-              <Link href="#journey" className="hover:text-gold-400 transition-colors">Dein Weg</Link>
+              <Link href={hrefFor("#journey")} className="hover:text-gold-400 transition-colors">Dein Weg</Link>
             </li>
             <li>
-              <Link href="#process" className="hover:text-gold-400 transition-colors">Prozess</Link>
+              <Link href={hrefFor("#process")} className="hover:text-gold-400 transition-colors">Prozess</Link>
             </li>
             <li>
-              <Link href="#contact" className="hover:text-gold-400 transition-colors">Kontakt</Link>
+              <Link href={hrefFor("#contact")} className="hover:text-gold-400 transition-colors">Kontakt</Link>
             </li>
           </ul>
         </div>

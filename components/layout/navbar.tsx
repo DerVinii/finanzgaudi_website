@@ -2,23 +2,27 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { label: "Start", href: "#hero" },
-  { label: "Über Joel", href: "#about" },
-  { label: "Leistungen", href: "#services" },
-  { label: "Dein Weg", href: "#journey" },
-  { label: "Prozess", href: "#process" },
-  { label: "Stimmen", href: "#testimonials" },
-  { label: "Kontakt", href: "#contact" },
+  { label: "Start", hash: "#hero" },
+  { label: "Über Joel", hash: "#about" },
+  { label: "Leistungen", hash: "#services" },
+  { label: "Dein Weg", hash: "#journey" },
+  { label: "Prozess", hash: "#process" },
+  { label: "Stimmen", hash: "#testimonials" },
+  { label: "Kontakt", hash: "#contact" },
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const hrefFor = (hash: string) =>
+    pathname === "/" ? hash : `/${hash}`;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -42,7 +46,7 @@ export function Navbar() {
       >
         <div className="container mx-auto flex items-center justify-between">
           <Link
-            href="#hero"
+            href={hrefFor("#hero")}
             className="flex items-center gap-2 group"
             aria-label="Joel Dziobek Startseite"
           >
@@ -63,8 +67,8 @@ export function Navbar() {
           <nav className="hidden lg:flex items-center gap-1">
             {links.map((l) => (
               <Link
-                key={l.href}
-                href={l.href}
+                key={l.hash}
+                href={hrefFor(l.hash)}
                 className="px-4 py-2 text-sm text-muted-foreground hover:text-gold-400 transition-colors relative group"
               >
                 {l.label}
@@ -74,7 +78,7 @@ export function Navbar() {
           </nav>
 
           <Link
-            href="#contact"
+            href={hrefFor("#contact")}
             className="hidden lg:inline-flex items-center px-5 py-2.5 rounded-full bg-gold-gradient text-neutral-900 text-sm font-semibold hover:scale-105 active:scale-95 transition-transform glow-gold"
           >
             Termin buchen
@@ -100,13 +104,13 @@ export function Navbar() {
           >
             {links.map((l, i) => (
               <motion.div
-                key={l.href}
+                key={l.hash}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
               >
                 <Link
-                  href={l.href}
+                  href={hrefFor(l.hash)}
                   onClick={() => setOpen(false)}
                   className="text-2xl font-display font-semibold text-foreground hover:text-gold-400 transition-colors py-3 px-6"
                 >
@@ -120,7 +124,7 @@ export function Navbar() {
               transition={{ delay: links.length * 0.05 }}
             >
               <Link
-                href="#contact"
+                href={hrefFor("#contact")}
                 onClick={() => setOpen(false)}
                 className="mt-6 inline-flex items-center px-8 py-3 rounded-full bg-gold-gradient text-neutral-900 font-semibold glow-gold"
               >
